@@ -294,7 +294,6 @@ function loginWithGoogle(){
 
           fullName: user.displayName || "User",
           email: user.email || "",
-          password: user.password || "",
           bids: 0,
           balance: 0,
           joinedAt: Date.now()
