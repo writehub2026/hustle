@@ -269,12 +269,7 @@ function loginWithGoogle(){
 
   const provider = new firebase.auth.GoogleAuthProvider();
 
-  /* SHOW LOADER */
-  const loadingScreen = document.getElementById("loadingScreen");
 
-  loadingScreen.style.display = "flex";
-  loadingScreen.style.opacity = "1";
-  loadingScreen.style.pointerEvents = "all";
 
   firebase.auth().signInWithPopup(provider)
 
@@ -301,7 +296,12 @@ function loginWithGoogle(){
         });
 
       }
+  /* SHOW LOADER */
+  const loadingScreen = document.getElementById("loadingScreen");
 
+  loadingScreen.style.display = "flex";
+  loadingScreen.style.opacity = "1";
+  loadingScreen.style.pointerEvents = "all";
       /* LOAD USER DATA */
       firebase.database().ref("users/" + user.uid)
       .once("value")
